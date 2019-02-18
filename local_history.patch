@@ -1,0 +1,29 @@
+Index: app/src/main/java/com/bignerdranch/android/geoquiz/QuizActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/bignerdranch/android/geoquiz/QuizActivity.java	(date 1550117084835)
++++ app/src/main/java/com/bignerdranch/android/geoquiz/QuizActivity.java	(date 1550117084835)
+@@ -84,11 +84,11 @@
+                 updateQuestion();
+             }
+         });
+-        mNextButton = (ImageButton) findViewById(R.id.next_button);
++//        mNextButton = (ImageButton) findViewById(R.id.next_button);
+         mNextButton.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+-//                mCurrentIndex = (mCurrentIndex + 1) % mQuestionBank.length;
++                mCurrentIndex = (mCurrentIndex + 1) % mQuestionBank.length;
+                 updateQuestion();
+             }
+         });
+@@ -96,6 +96,7 @@
+     }
+ 
+     private void updateQuestion() {
++//        Log.d(TAG, "Updating Question text", new Exception());
+         int question = mQuestionBank[mCurrentIndex].getTextId();
+         mQuestionTextView.setText(question);
+         mTrueButton.setEnabled(!mQuestionBank[mCurrentIndex].isAlreadyAnswer());
